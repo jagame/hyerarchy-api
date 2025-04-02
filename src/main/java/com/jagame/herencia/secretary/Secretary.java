@@ -1,11 +1,10 @@
 package com.jagame.herencia.secretary;
 
 import com.jagame.herencia.shared.ContactInfo;
-import com.jagame.herencia.shared.employee.SupervisedEmployee;
 import com.jagame.herencia.shared.PersonalInfo;
-import com.jagame.herencia.boss.ZoneBossRole;
+import com.jagame.herencia.shared.employee.Employee;
 
-public class Secretary extends SupervisedEmployee<SecretaryRole, ZoneBossRole> {
+public class Secretary extends Employee<SecretaryRole> {
 
     public Secretary(
             PersonalInfo personalInfo,

@@ -1,5 +1,6 @@
 package com.jagame.herencia.shared.employee;
 
+import com.jagame.herencia.boss.ZoneBossRole;
 import com.jagame.herencia.shared.Printable;
 import com.jagame.herencia.shared.Printer;
 
@@ -10,6 +11,7 @@ import java.util.Objects;
 public abstract class Role implements Printable {
 
     private BigDecimal salary;
+    private Employee<ZoneBossRole> supervisor;
 
     protected Role(BigDecimal baseSalary) {
         this.salary = baseSalary;
@@ -19,6 +21,14 @@ public abstract class Role implements Printable {
 
     protected BigDecimal salary() {
         return salary;
+    }
+
+    protected Employee<ZoneBossRole> supervisor() {
+        return supervisor;
+    }
+
+    protected void setSupervisor(Employee<ZoneBossRole> supervisor) {
+        this.supervisor = supervisor;
     }
 
     protected void incrementSalary() {

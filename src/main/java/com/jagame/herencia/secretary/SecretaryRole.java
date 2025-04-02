@@ -1,13 +1,12 @@
 package com.jagame.herencia.secretary;
 
 import com.jagame.herencia.shared.Printer;
-import com.jagame.herencia.shared.employee.SupervisedRole;
-import com.jagame.herencia.boss.ZoneBossRole;
+import com.jagame.herencia.shared.employee.Role;
 
 import java.math.BigDecimal;
 import java.util.Objects;
 
-public class SecretaryRole extends SupervisedRole<ZoneBossRole> {
+public class SecretaryRole extends Role {
 
     private static final BigDecimal SALARY_INCREMENT_PERCENTAGE = BigDecimal.valueOf(0.05);
     private final int officeNumber;
