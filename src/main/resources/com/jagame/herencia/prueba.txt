@@ -1,0 +1,3 @@
+Esto es un fichero de prueba
+con multiples líneas
+    y tabulaciones (no se pa qué)
