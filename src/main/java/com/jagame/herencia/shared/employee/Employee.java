@@ -1,6 +1,5 @@
 package com.jagame.herencia.shared.employee;
 
-import com.jagame.herencia.boss.ZoneBossRole;
 import com.jagame.herencia.shared.ContactInfo;
 import com.jagame.herencia.shared.PersonalInfo;
 import com.jagame.herencia.shared.Printable;
@@ -35,10 +34,6 @@ public abstract class Employee<T extends Role> implements Printable {
         contactInfo.print(printer);
         roleInfo.print(printer);
         printer.print("===============\n");
-    }
-
-    public void setSupervisor(Employee<ZoneBossRole> supervisor) {
-        roleInfo().setSupervisor(supervisor);
     }
 
     public void incrementSalary() {

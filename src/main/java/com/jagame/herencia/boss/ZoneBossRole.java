@@ -7,6 +7,7 @@ import com.jagame.herencia.secretary.Secretary;
 import com.jagame.herencia.seller.Seller;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -20,8 +21,8 @@ public class ZoneBossRole extends Role {
     private Secretary secretary;
     private Car car;
 
-    public ZoneBossRole(BigDecimal baseSalary, int officeNumber) {
-        super(baseSalary);
+    public ZoneBossRole(BigDecimal baseSalary, LocalDate seniority, int officeNumber) {
+        super(baseSalary, seniority);
         this.officeNumber = officeNumber;
         this.sellers = new HashSet<>();
     }
@@ -31,7 +32,7 @@ public class ZoneBossRole extends Role {
         return "Zone boss";
     }
 
-    int officeNumber() {
+    public int officeNumber() {
         return officeNumber;
     }
 

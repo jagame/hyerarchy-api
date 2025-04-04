@@ -4,9 +4,9 @@ import com.jagame.herencia.shared.Car;
 import com.jagame.herencia.shared.Client;
 import com.jagame.herencia.shared.ContactInfo;
 import com.jagame.herencia.shared.PersonalInfo;
-import com.jagame.herencia.shared.employee.Employee;
+import com.jagame.herencia.shared.employee.EmployeeSupervised;
 
-public class Seller extends Employee<SellerRole> {
+public class Seller extends EmployeeSupervised<SellerRole> {
     public Seller(
             PersonalInfo personalInfo,
             ContactInfo contactInfo,

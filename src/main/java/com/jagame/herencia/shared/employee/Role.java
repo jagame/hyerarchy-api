@@ -1,34 +1,28 @@
 package com.jagame.herencia.shared.employee;
 
-import com.jagame.herencia.boss.ZoneBossRole;
 import com.jagame.herencia.shared.Printable;
 import com.jagame.herencia.shared.Printer;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.time.LocalDate;
+import java.time.Period;
 import java.util.Objects;
 
 public abstract class Role implements Printable {
 
+    private final LocalDate seniority;
     private BigDecimal salary;
-    private Employee<ZoneBossRole> supervisor;
 
-    protected Role(BigDecimal baseSalary) {
+    protected Role(BigDecimal baseSalary, LocalDate seniority) {
         this.salary = baseSalary;
+        this.seniority = seniority;
     }
 
     protected abstract String roleName();
 
     protected BigDecimal salary() {
         return salary;
-    }
-
-    protected Employee<ZoneBossRole> supervisor() {
-        return supervisor;
-    }
-
-    protected void setSupervisor(Employee<ZoneBossRole> supervisor) {
-        this.supervisor = supervisor;
     }
 
     protected void incrementSalary() {
@@ -41,13 +35,17 @@ public abstract class Role implements Printable {
     @Override
     public void print(Printer printer) {
         String formattedSalary = salary.setScale(2, RoundingMode.HALF_UP).toPlainString();
+        Period periodSeniority = Period.between(seniority, LocalDate.now());
         printer.print("""
                 --- Role info ---
                 Role: %s
                 Salary: %s €
+                Seniority: %d years and %d months
                 """,
                 roleName(),
-                formattedSalary
+                formattedSalary,
+                periodSeniority.getYears(),
+                periodSeniority.getMonths()
         );
     }
 

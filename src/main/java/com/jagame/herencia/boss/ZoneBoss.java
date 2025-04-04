@@ -41,4 +41,7 @@ public class ZoneBoss extends Employee<ZoneBossRole> {
         roleInfo().setCar(car);
     }
 
+    public int officeNumber() {
+        return roleInfo().officeNumber();
+    }
 }

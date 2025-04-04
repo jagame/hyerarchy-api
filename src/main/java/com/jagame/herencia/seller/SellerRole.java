@@ -3,15 +3,16 @@ package com.jagame.herencia.seller;
 import com.jagame.herencia.shared.Car;
 import com.jagame.herencia.shared.Client;
 import com.jagame.herencia.shared.Printer;
-import com.jagame.herencia.shared.employee.Role;
+import com.jagame.herencia.shared.employee.RoleSupervised;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class SellerRole extends Role {
+public class SellerRole extends RoleSupervised {
 
     private static final BigDecimal SALARY_INCREMENT_PERCENTAGE = BigDecimal.valueOf(0.1);
 
@@ -23,11 +24,12 @@ public class SellerRole extends Role {
 
     public SellerRole(
             BigDecimal baseSalary,
+            LocalDate seniority,
             String mobilePhone,
             String sellArea,
             double commissionPercentage
     ) {
-        super(baseSalary);
+        super(baseSalary, seniority);
         this.mobilePhone = mobilePhone;
         this.sellArea = sellArea;
         this.clients = new HashSet<>();
@@ -91,9 +93,10 @@ public class SellerRole extends Role {
     }
 
     private String clientsDescription() {
-        return clients.stream()
+        String clientsDescriptions = clients.stream()
                 .map(Client::name)
                 .collect(Collectors.joining(", "));
+        return clientsDescriptions.isEmpty() ? null : clientsDescriptions;
     }
 
     @Override

@@ -11,6 +11,7 @@ import com.jagame.herencia.shared.PersonalInfo;
 import com.jagame.herencia.shared.Printer;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 
 public class App {
 
@@ -18,32 +19,32 @@ public class App {
         var javiBoss = new ZoneBoss(
                 new PersonalInfo("Javier", "Gavilán", "78978978V"),
                 new ContactInfo("655801955", "Su casa"),
-                new ZoneBossRole(BigDecimal.valueOf(5000), 1)
+                new ZoneBossRole(BigDecimal.valueOf(5000), LocalDate.of(2018, 6,11),1)
         );
         var saraSecretary = new Secretary(
                 new PersonalInfo("Sara", "Clon One", "78978978V"),
                 new ContactInfo("655801955", "Su casa"),
-                new SecretaryRole(BigDecimal.valueOf(2000), 5, "123456789")
+                new SecretaryRole(BigDecimal.valueOf(2000), LocalDate.of(2020, 6,11),5, "123456789")
         );
         var saraSeller1 = new Seller(
                 new PersonalInfo("Sara", "Clon Two", "78978978V"),
                 new ContactInfo("655801955", "Su casa"),
-                new SellerRole(BigDecimal.valueOf(1500), "666000666", "Casa de Javi", 0.01)
+                new SellerRole(BigDecimal.valueOf(1500), LocalDate.of(2020, 8,11), "666000666", "Casa de Javi", 0.01)
         );
         var saraSeller2 = new Seller(
                 new PersonalInfo("Sara", "Clon Three", "78978978V"),
                 new ContactInfo("655801955", "Su casa"),
-                new SellerRole(BigDecimal.valueOf(1500), "666000666", "Casa de Javi", 0.01)
+                new SellerRole(BigDecimal.valueOf(1500), LocalDate.of(2020, 10,11), "666000666", "Casa de Javi", 0.01)
         );
         javiBoss.setSecretary(saraSecretary);
         javiBoss.addSeller(saraSeller1);
         javiBoss.addSeller(saraSeller2);
 
         Printer printer = System.out::printf;
-        javiBoss.print(printer);
-        saraSecretary.print(printer);
+//        javiBoss.print(printer);
+//        saraSecretary.print(printer);
         saraSeller1.print(printer);
-        saraSeller2.print(printer);
+//        saraSeller2.print(printer);
     }
 
 }
