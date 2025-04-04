@@ -1,12 +1,13 @@
 package com.jagame.herencia.seller;
 
+import com.jagame.herencia.boss.ZoneBossRole;
 import com.jagame.herencia.shared.Car;
 import com.jagame.herencia.shared.Client;
 import com.jagame.herencia.shared.ContactInfo;
 import com.jagame.herencia.shared.PersonalInfo;
 import com.jagame.herencia.shared.employee.EmployeeSupervised;
 
-public class Seller extends EmployeeSupervised<SellerRole> {
+public class Seller extends EmployeeSupervised<ZoneBossRole, SellerRole> {
     public Seller(
             PersonalInfo personalInfo,
             ContactInfo contactInfo,

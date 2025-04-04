@@ -1,5 +1,6 @@
 package com.jagame.herencia.seller;
 
+import com.jagame.herencia.boss.ZoneBossRole;
 import com.jagame.herencia.shared.Car;
 import com.jagame.herencia.shared.Client;
 import com.jagame.herencia.shared.Printer;
@@ -12,7 +13,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class SellerRole extends RoleSupervised {
+public class SellerRole extends RoleSupervised<ZoneBossRole> {
 
     private static final BigDecimal SALARY_INCREMENT_PERCENTAGE = BigDecimal.valueOf(0.1);
 
